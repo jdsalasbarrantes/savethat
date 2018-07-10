@@ -5,8 +5,8 @@ services:
     volumes:
       - "postgres:/var/lib/postgresql/data"
     environment:
-      - POSTGRES_USER=savethat
-      - POSTGRES_PASSWORD=P@ssword123
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
       - POSTGRES_DB=savethat_development
     ports:
       - "5432:5432"

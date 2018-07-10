@@ -25,8 +25,8 @@ default: &default
 development:
   <<: *default
   database: savethat_development
-  username: savethat
-  password: P@ssword123
+  username:
+  password:
   host: db
 
   # The specified database role being used to connect to postgres.
