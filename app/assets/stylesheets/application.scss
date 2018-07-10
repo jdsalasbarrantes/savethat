@@ -1,0 +1,38 @@
+@import "bootstrap";
+@import "style";
+@import "logo";
+
+body {
+  background-color: $dark-blue;
+  color: $gray;
+}
+
+.form-control {
+  &:focus {
+    border: 3px solid $light-green;
+  }
+}
+
+.container {
+  padding-top: 180px;
+}
+
+.button {
+  color: $white;
+  background-color: $light-green;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: $light-green;
+  }
+}
+
+.logo {
+  font-size: 60px;
+  position: relative;
+  top: 80px;
+
+}
+
+.alert-success {
+  background-color: $light-green;
+}

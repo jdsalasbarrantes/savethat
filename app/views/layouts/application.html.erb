@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Savethat</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <a class="logo" href="/">
+            savethat.money
+          </a>
+        </div>
+        <div class="col">
+          <%= yield %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

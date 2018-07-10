@@ -1,0 +1,11 @@
+@import "style";
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+.logo {
+  color: $white;
+  font-family: 'Raleway', serif;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
