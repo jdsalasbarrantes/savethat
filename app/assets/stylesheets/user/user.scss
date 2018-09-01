@@ -1,0 +1,9 @@
+@import "style";
+@import "admin_template";
+
+.alert {
+  position: absolute;
+  z-index: 1031;
+  top: 0;
+  width: 100%;
+}

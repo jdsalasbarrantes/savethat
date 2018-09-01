@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+class CustomDevise::RegistrationsController < Devise::RegistrationsController
   # Custom registration controller extended from devise to add first_name and last_name as part of the user creation
   private
 

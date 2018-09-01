@@ -5,16 +5,23 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag 'user', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'shared', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'user/user', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'shared', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= notice %>
+  </div>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+  <div class="alert alert-danger">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= alert %>
+  </div>
 <% end %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
   <a class="navbar-brand logo" href="/">Save That Money</a>
@@ -24,15 +31,21 @@
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/dashboard">
           <i class="fa fa-fw fa-calculator"></i>
           <span class="nav-link-text">Dashboard</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="/transaction">
           <i class="fa fa-fw fa-table"></i>
           <span class="nav-link-text">Transactions</span>
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <a class="nav-link" href="/account">
+          <i class="fa fa-fw fa-bank"></i>
+          <span class="nav-link-text">Account</span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -78,7 +91,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link"  href="/logout">
+        <a class="nav-link" href="/logout">
           <i class="fa fa-fw fa-sign-out"></i>Logout</a>
       </li>
     </ul>

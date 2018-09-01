@@ -1,6 +1,4 @@
-@import "bootstrap";
 @import "style";
-@import "logo";
 
 body {
   background-color: $dark-blue;
@@ -35,8 +33,4 @@ body {
 
 .column-1 {
   margin-bottom: 30px;
-}
-
-.alert-success {
-  background-color: $light-green;
 }

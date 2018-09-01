@@ -1,5 +1,7 @@
-@import "style";
+@import "bootstrap";
+@import "font-awesome";
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import "style";
 
 .logo {
   color: $white;
@@ -8,4 +10,8 @@
     text-decoration: none;
     color: white;
   }
+}
+
+.alert-success {
+  background-color: $light-green;
 }
