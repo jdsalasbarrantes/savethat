@@ -2,6 +2,7 @@ class Transaction < ApplicationRecord
   validates :name,  :presence => true
   validates :amount,  :presence => true, :numericality => { :greater_than_or_equal_to => 0 }
   validates :transaction_type,  :presence => true
+  validates :date, :presence => true
   belongs_to :account
 
   OUTCOME = "outcome"
@@ -29,11 +30,9 @@ class Transaction < ApplicationRecord
     end
   end
 
-
   def self.order_by_date
-    order(created_at: :desc)
+    order(date: :desc)
   end
-
 
   private
 

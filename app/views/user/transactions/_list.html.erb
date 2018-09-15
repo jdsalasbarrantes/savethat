@@ -44,7 +44,7 @@
       <% transactions.each do |transaction| %>
         <tr>
           <td>
-            <%= transaction.created_at.to_date %>
+            <%= transaction.date %>
           </td>
           <% if local_assigns[:account].nil? %>
             <td>

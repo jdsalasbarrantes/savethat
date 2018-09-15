@@ -5,7 +5,7 @@ class User::TransactionsController < User::BaseController
 
   def load_transaction
     if params[:id]
-      @transaction = Transaction.find(params[:id])
+      @transaction = current_user.transactions.find(params[:id])
     end
   end
 
@@ -50,11 +50,11 @@ class User::TransactionsController < User::BaseController
   private
 
   def transaction_params_on_create
-    params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :account_id)
+    params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :account_id, :date)
   end
 
   def transaction_params_on_update
-    params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :account_id)
+    params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :account_id, :date)
   end
 end
 

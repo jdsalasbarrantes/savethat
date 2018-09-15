@@ -4,7 +4,7 @@ class User::AccountsController < User::BaseController
 
   def load_account
     if params[:id]
-      @account = Account.find(params[:id])
+      @account = current_user.accounts.find(params[:id])
     end
   end
 

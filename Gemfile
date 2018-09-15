@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.1.1'
 # Use JQuery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 # Use Font-Awesome icons
 gem 'font-awesome-rails'
 # Use Devise to handle user flows
