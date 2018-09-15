@@ -1,5 +1,6 @@
 @import "style";
 @import "admin_template";
+@import "table";
 
 .alert {
   position: absolute;
@@ -7,3 +8,19 @@
   top: 0;
   width: 100%;
 }
+
+.header{
+  .add-button {
+    display: inline-block;
+    float: right;
+  }
+  .title {
+    display: inline-block;
+  }
+}
+
+.form {
+  width: 50%;
+}
+
+

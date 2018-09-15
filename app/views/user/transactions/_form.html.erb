@@ -1,0 +1,42 @@
+<div class="form">
+  <%= form_for transaction, url: {action: transaction.new_record? ? "create" : "update"} do |f| %>
+    <div class="form-group">
+      <label>
+        <%= t("user.transaction.model.type") %>
+      </label>
+      <%= f.select :transaction_type, Transaction::TYPES.map {|type| [t("user.transaction.types.#{type}"), type]}, {}, {:class => "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <%= t("user.transaction.model.name") %>
+      </label>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <%= t("user.transaction.model.description") %>
+      </label>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <%= t("user.transaction.model.amount") %>
+      </label>
+      <%= f.number_field :amount, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <%= t("user.transaction.model.account") %>
+      </label>
+      <% default_value = params[:account] ? params[:account] : nil %>
+      <%= f.select :account_id, options_for_select(current_user.accounts.pluck(:name, :id), default_value), {}, {:class => "form-control"} %>
+    </div>
+
+    <%= link_to t("form.cancel"), params[:account] ? account_path(params[:account]) : transactions_path, class: "btn" %>
+    <%= f.submit transaction.new_record? ? t("form.create"): t("form.update") %>
+  <% end %>
+</div>

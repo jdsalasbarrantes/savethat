@@ -30,4 +30,61 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user:
+    account:
+      initial_transaction_name: "Initial Balance"
+      model:
+        name: "Name"
+        current_balance: "Current Balance"
+      index:
+        title: "Accounts"
+        empty: "You don't have accounts, please create one"
+        add_account: "Add Account"
+        table:
+          money: "Current Balance"
+      new:
+        title: "New Account"
+        created: "Account created successfully"
+        error: "Something went wrong creating the account, please try again"
+      edit:
+        title: "Edit Account: %{name}"
+      show:
+        title: "Account: %{name}"
+        subtitle: "Transactions"
+      destroy:
+        destroyed: "Account has been deleted successfully"
+        confirmation: "Are you sure?"
+    transaction:
+      types:
+        income: "Income"
+        outcome: "Outcome"
+      model:
+        type: "Type"
+        date: "Date"
+        name: "Name"
+        amount: "Amount"
+        account: "Account"
+        description: "Description"
+      index:
+        title: "Transactions"
+        empty: "You don't have transactions"
+        add_transaction: "Add Transaction"
+      new:
+        title: "New Transaction"
+        created: "Transaction created successfully"
+        error: "Something went wrong creating the transaction, please try again"
+      edit:
+        title: "Update Transaction"
+        created: "Transaction updated successfully"
+        error: "Something went wrong updating the transaction, please try again"
+      destroy:
+        destroyed: "Transaction has been deleted successfully"
+        confirmation: "Are you sure?"
+  form:
+    create: "Create"
+    update: "Update"
+    delete: "Delete"
+    cancel: "Cancel"
+
+  table:
+    actions: "Actions"

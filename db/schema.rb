@@ -10,12 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_09_232758) do
+ActiveRecord::Schema.define(version: 2018_09_01_195202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "user", force: :cascade do |t|
+  create_table "accounts", force: :cascade do |t|
+    t.string "name", null: false
+    t.decimal "current_balance", default: "0.0", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "transaction_type"
+    t.string "name"
+    t.text "description"
+    t.decimal "amount"
+    t.bigint "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_transactions_on_account_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

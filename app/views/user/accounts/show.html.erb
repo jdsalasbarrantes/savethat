@@ -1,0 +1,12 @@
+<% provide(:title, t("user.account.show.title", :name => @account.name)) %>
+
+<h1>
+  <%= t("user.account.show.title", :name => @account.name) %>
+</h1>
+
+<h2>
+  <%= t("user.account.model.current_balance") %>:
+  <%= @account.current_balance %>
+</h2>
+
+<%= render "user/transactions/list", transactions: @transactions, account: @account %>
