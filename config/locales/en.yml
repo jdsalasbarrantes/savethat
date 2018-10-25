@@ -48,6 +48,8 @@ en:
         error: "Something went wrong creating the account, please try again"
       edit:
         title: "Edit Account: %{name}"
+        updated: "Account updated successfully"
+        error: "Something went wrong updating the account, please try again"
       show:
         title: "Account: %{name}"
         subtitle: "Transactions"
@@ -69,6 +71,7 @@ en:
       index:
         title: "Transactions"
         empty: "You don't have transactions"
+        empty_accounts: "You don't have an account, please create one in order to create transactions"
         add_transaction: "Add Transaction"
       new:
         title: "New Transaction"

@@ -1,5 +1,5 @@
 class User::AccountsController < User::BaseController
-
+  include ApplicationHelper
   before_action :load_account
 
   def load_account
@@ -17,14 +17,28 @@ class User::AccountsController < User::BaseController
   end
 
   def create
-    @account = Account.new(account_params)
+    @account = Account.new(account_params_on_create)
     @account.user = current_user
     if @account.save
       flash[:notice] = I18n.t("user.account.new.created")
       redirect_to account_path(@account)
     else
-      flash[:alert] = I18n.t("user.account.new.error")
-      redirect_back(fallback_location: url_for(action: "new"))
+      flash[:alert] = display_active_record_error(@account, I18n.t("user.account.new.error"))
+      render :new
+    end
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @account.update(account_params_on_update)
+      flash[:notice] = I18n.t("user.account.edit.updated")
+      redirect_to account_path(@account)
+    else
+      flash[:alert] = display_active_record_error(@account, I18n.t("user.account.edit.error"))
+      render :edit
     end
   end
 
@@ -40,8 +54,12 @@ class User::AccountsController < User::BaseController
 
   private
 
-  def account_params
+  def account_params_on_create
     params.require(:account).permit(:name, :current_balance)
+  end
+
+  def account_params_on_update
+    params.require(:account).permit(:name)
   end
 end
 

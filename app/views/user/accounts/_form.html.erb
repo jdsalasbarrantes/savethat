@@ -1,0 +1,19 @@
+<div class="form">
+  <%= form_for account, url: {action: account.persisted? ? "update" : "create"} do |f| %>
+      <div class="form-group">
+        <label>
+          <%= t("user.account.model.name") %>
+        </label>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <%= t("user.account.model.current_balance") %>
+        </label>
+        <%= f.number_field :current_balance, class: "form-control", disabled: account.persisted? %>
+      </div>
+      <%= link_to t("form.cancel"), accounts_path, class: "btn" %>
+      <%= f.submit account.persisted? ? t('form.update') : t('form.create') %>
+  <% end %>
+</div>
