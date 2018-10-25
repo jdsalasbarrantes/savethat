@@ -53,6 +53,7 @@ en:
       show:
         title: "Account: %{name}"
         subtitle: "Transactions"
+        edit: "Edit Account"
       destroy:
         destroyed: "Account has been deleted successfully"
         confirmation: "Are you sure?"

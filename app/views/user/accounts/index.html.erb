@@ -45,6 +45,11 @@
           </td>
           <td>
             <div class="action-button">
+              <%= button_to edit_account_path(account), :method => :get, :class => "btn btn-sm btn-primary" do %>
+                  <i class="fa fa-fw fa-pencil"></i>
+              <% end %>
+            </div>
+            <div class="action-button">
               <%= button_to account, :method => :delete, data: { confirm: t("user.account.destroy.confirmation") }, :class => "btn btn-sm btn-danger" do %>
                 <i class="fa fa-fw fa-trash"></i>
               <% end %>
