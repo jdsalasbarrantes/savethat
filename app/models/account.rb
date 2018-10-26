@@ -1,10 +1,16 @@
 class   Account < ApplicationRecord
   validates :name, :presence => true
   validates :current_balance, :presence => true
-  belongs_to :user
   has_many :transactions
+  has_and_belongs_to_many :users
+  ACCOUNT_CODE_LENGTH = 8
 
   after_create :create_initial_transaction
+  before_create :generate_code
+
+  def generate_code
+    self.code = SecureRandom.hex(ACCOUNT_CODE_LENGTH)
+  end
 
   def create_initial_transaction
     if current_balance > 0

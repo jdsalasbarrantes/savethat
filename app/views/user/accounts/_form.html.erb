@@ -14,6 +14,6 @@
         <%= f.number_field :current_balance, class: "form-control", disabled: account.persisted? %>
       </div>
       <%= link_to t("form.cancel"), accounts_path, class: "btn" %>
-      <%= f.submit account.persisted? ? t('form.update') : t('form.create') %>
+      <%= f.submit account.persisted? ? t('form.update') : t('form.create'), :class => "btn btn-primary" %>
   <% end %>
 </div>

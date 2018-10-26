@@ -21,7 +21,7 @@ body.fixed-nav {
 
 .content-wrapper {
     min-height: calc(100vh - 56px);
-    padding: 1rem;
+    padding: $main-content-padding;
 }
 
 .scroll-to-top {
@@ -32,18 +32,18 @@ body.fixed-nav {
     width: 50px;
     height: 50px;
     text-align: center;
-    color: $white;
-    background-color: $dark-blue;
+    color: $btn-default-text-color;
+    background-color: $scroll-to-top-btn-bg-color;
     opacity: 0.5;
     line-height: 45px;
 }
 
 .scroll-to-top:focus, .scroll-to-top:hover {
-    color: $white;
+    color: $btn-default-text-color;
 }
 
 .scroll-to-top:hover {
-    background: $dark-blue;
+    background: $scroll-to-top-btn-bg-color;
     opacity: 0.8;
 }
 
@@ -204,7 +204,7 @@ body.fixed-nav {
 }
 .content-wrapper {
     overflow-x: hidden;
-    background: $white;
+    background: $bg-color;
 }
 
 @media (min-width: 992px) {
@@ -250,30 +250,30 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
-    color: $gray;
+    color: $side-panel-text-color;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
-    color: $gray;
+    color: $side-panel-text-color;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover {
-    color: $white;
+    color: $btn-default-text-color;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a {
-    color: $gray;
+    color: $side-panel-text-color;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a:hover,
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:focus,
 #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level > li > a:hover {
-    color: $white;
+    color: $btn-default-text-color;
 }
 
 #mainNav.navbar-dark .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
-    color: $gray;
+    color: $side-panel-text-color;
 }
 
 @media (min-width: 992px) {
@@ -295,18 +295,18 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 @media (min-width: 992px) {
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
-        background: $dark-blue;
+        background: $side-panel-bg-color;
     }
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
         color: white !important;
-        background-color: $gray;
+        background-color: $side-panel-text-color;
     }
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:hover {
         color: white;
     }
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
     #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-        background: $dark-blue;
+        background: $side-panel-bg-color;
     }
 }
 
@@ -342,7 +342,7 @@ footer.sticky-footer {
     bottom: 0;
     width: 100%;
     height: 56px;
-    background-color: $light-gray;
+    background-color: $footer-bg-color;
     line-height: 55px;
 }
 

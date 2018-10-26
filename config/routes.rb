@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   get "dashboard" => "user/dashboard#index"
 
-  resources :accounts, controller: "user/accounts"
+  resources :accounts, controller: "user/accounts" do
+    collection do
+      get "new_existing"
+      post "create_existing"
+    end
+  end
   resources :transactions, controller: "user/transactions"
 end

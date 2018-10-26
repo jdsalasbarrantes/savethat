@@ -1,16 +1,20 @@
 <% provide(:title, t("user.account.show.title", :name => @account.name)) %>
 
-<div class="header">
-  <h1 class="title">
-    <%= t("user.account.show.title", :name => @account.name) %>
-  </h1>
-  <div class="add-button">
-    <%= button_to t("user.account.show.edit"), edit_account_path(@account), :method => :get, :class => "btn btn-primary" %>
-  </div>
-</div>
+<h1 class="title">
+  <%= t("user.account.show.title", :name => @account.name) %>
+</h1>
+
+<!--<div class="edit-button">-->
+  <!--<%= button_to t("user.account.show.edit"), edit_account_path(@account), :method => :get, :class => "btn btn-primary" %>-->
+<!--</div>-->
+
 <h2>
   <%= t("user.account.model.current_balance") %>:
   <%= @account.current_balance %>
 </h2>
 
 <%= render "user/transactions/list", transactions: @transactions, account: @account %>
+
+<p>
+  <%= t('user.account.show.share', code: @account.code) %>
+</p>

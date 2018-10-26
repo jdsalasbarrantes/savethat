@@ -1,24 +1,21 @@
-<div class="header">
-  <h1 class="title">
-    <%= t("user.transaction.index.title") %>
-  </h1>
-  <% unless current_user.accounts.empty? %>
-    <div class="add-button">
-      <% if local_assigns[:account].present? %>
-        <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, params: {account: account.id}, :class => "btn btn-primary" %>
-      <% else %>
-        <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, :class => "btn btn-primary" %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<h1 class="title">
+  <%= t("user.transaction.index.title") %>
+</h1>
 
 <div>
   <% if current_user.accounts.empty? %>
       <%= t "user.transaction.index.empty_accounts" %>
   <% elsif transactions.empty? %>
     <%= t "user.transaction.index.empty" %>
+      <%= link_to t("term.here"), new_transaction_path %>
   <% else %>
+    <div class="add-button">
+      <% if local_assigns[:account].present? %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, params: {account: account.id}, :class => "btn btn-primary" %>
+      <% else %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, :class => "btn btn-primary" %>
+      <% end %>
+    </div>
     <table class="table">
       <thead>
       <tr>

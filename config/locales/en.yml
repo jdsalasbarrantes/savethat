@@ -36,24 +36,29 @@ en:
       model:
         name: "Name"
         current_balance: "Current Balance"
+        code: "Code"
       index:
         title: "Accounts"
         empty: "You don't have accounts, please create one"
-        add_account: "Add Account"
+        add_new_account: "Add New Account"
+        add_existing_account: "Add Existing Account"
         table:
           money: "Current Balance"
       new:
         title: "New Account"
         created: "Account created successfully"
         error: "Something went wrong creating the account, please try again"
+      new_existing:
+        error: "The code doesn't belongs to an account, please try again"
+        already_added: "This code was already added to you, the account name is %{account}"
       edit:
         title: "Edit Account: %{name}"
         updated: "Account updated successfully"
         error: "Something went wrong updating the account, please try again"
       show:
         title: "Account: %{name}"
-        subtitle: "Transactions"
         edit: "Edit Account"
+        share: "To share this account use the following code: %{code}"
       destroy:
         destroyed: "Account has been deleted successfully"
         confirmation: "Are you sure?"
@@ -71,7 +76,7 @@ en:
         date: "Date"
       index:
         title: "Transactions"
-        empty: "You don't have transactions"
+        empty: "You don't have transactions. To create one click"
         empty_accounts: "You don't have an account, please create one in order to create transactions"
         add_transaction: "Add Transaction"
       new:
@@ -86,6 +91,7 @@ en:
         destroyed: "Transaction has been deleted successfully"
         confirmation: "Are you sure?"
   form:
+    add: "Add"
     create: "Create"
     update: "Update"
     delete: "Delete"
@@ -93,3 +99,6 @@ en:
 
   table:
     actions: "Actions"
+
+  term:
+    here: "here"

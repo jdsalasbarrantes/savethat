@@ -18,13 +18,34 @@ class User::AccountsController < User::BaseController
 
   def create
     @account = Account.new(account_params_on_create)
-    @account.user = current_user
+    @account.users = [current_user]
     if @account.save
       flash[:notice] = I18n.t("user.account.new.created")
       redirect_to account_path(@account)
     else
       flash[:alert] = display_active_record_error(@account, I18n.t("user.account.new.error"))
       render :new
+    end
+  end
+
+  def new_existing
+  end
+
+  def create_existing
+    code = params[:code]
+    account = Account.where(code: code).first
+    if account
+      if account.user_ids.include?(current_user.id)
+        flash[:alert] = I18n.t("user.account.new_existing.already_added", account: account.name)
+        render :new_existing
+      else
+        account.users = account.users.push(current_user)
+        account.save
+        redirect_to account_path(account)
+      end
+    else
+      flash[:alert] = I18n.t("user.account.new_existing.error")
+      render :new_existing
     end
   end
 

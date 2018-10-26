@@ -1,11 +1,15 @@
 <% provide(:title, t("user.account.index.title")) %>
 
-<div class="header">
-  <h1 class="title">
-    <%= t("user.account.index.title") %>
-  </h1>
-  <div class="add-button">
-    <%= button_to t("user.account.index.add_account"), new_account_path, :method => :get, :class => "btn btn-primary" %>
+<h1 class="title">
+  <%= t("user.account.index.title") %>
+</h1>
+
+<div class="button-list">
+  <div class="add-button button-element">
+    <%= button_to t("user.account.index.add_new_account"), new_account_path, :method => :get, :class => "btn btn-primary" %>
+  </div>
+  <div class="add-button button-element">
+    <%= button_to t("user.account.index.add_existing_account"), new_existing_accounts_path, :method => :get, :class => "btn btn-primary" %>
   </div>
 </div>
 

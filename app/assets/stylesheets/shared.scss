@@ -1,12 +1,12 @@
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
 @import "jquery-ui/datepicker";
 @import "jquery-ui/theme";
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-@import "style";
 
 .logo {
-  color: $white;
+  color: $logo-color;
   font-family: 'Raleway', serif;
   &:hover {
     text-decoration: none;
@@ -15,9 +15,19 @@
 }
 
 .alert-success {
-  background-color: $light-green;
+  background-color: $success-alert-bg-color;
 }
 
 .error-list {
   margin-bottom: 0;
+}
+
+.button, .btn-primary {
+  color: $btn-default-text-color;
+  background-color: $btn-default-bg-color;
+  border-color: $btn-default-border-color;
+  &:hover {
+    border-color: $btn-default-border-color;
+    background-color: $btn-default-bg-color;
+  }
 }

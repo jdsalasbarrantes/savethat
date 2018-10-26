@@ -1,0 +1,34 @@
+
+// Colors variables
+$green-200: #37A269;
+$green-100: #5DC88F;
+$blue-500: #2A363F;
+$gray-800: #343a40;
+$gray-300: #9BA7A5;
+$gray-200: #D0D3D6;
+$gray-100: #E9ECEF;
+$white: #FFFFFF;
+
+
+// Base colors
+$btn-default-text-color: $white !default;
+$btn-default-border-color: $green-200 !default;
+$btn-default-bg-color: $green-100 !default;
+$success-alert-bg-color: $green-100 !default;
+$not-logged-in-bg-color: $gray-800 !default;
+$not-logged-in-text-color: $gray-300 !default;
+$scroll-to-top-btn-bg-color: $gray-800 !default;
+$side-panel-bg-color: $gray-800 !default;
+$side-panel-text-color: $gray-300 !default;
+$footer-bg-color: $gray-100 !default;
+$bg-color: $white !default;
+$logo-color: $white !default;
+$table-child-bg-color: $gray-100 !default;
+
+
+// Base margins
+$default-section-margin: 10px !default;
+
+
+// Base paddings
+$main-content-padding: 20px !default;

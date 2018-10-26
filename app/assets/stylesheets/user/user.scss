@@ -1,4 +1,4 @@
-@import "style";
+@import "../variables";
 @import "admin_template";
 @import "table";
 
@@ -9,18 +9,21 @@
   width: 100%;
 }
 
-.header{
-  .add-button {
-    display: inline-block;
-    float: right;
-  }
-  .title {
+.title, .add-button, .table {
+  margin-bottom: $default-section-margin;
+}
+
+.button-list {
+  margin-bottom: $default-section-margin;
+  .button-element {
     display: inline-block;
   }
 }
 
-.form {
-  width: 50%;
+.table {
+  tbody{
+    tr:nth-child(2n + 1) {
+      background: $table-child-bg-color;
+    }
+  }
 }
-
-

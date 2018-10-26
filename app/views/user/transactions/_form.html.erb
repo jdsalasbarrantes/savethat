@@ -44,6 +44,6 @@
     </div>
 
     <%= link_to t("form.cancel"), params[:account] ? account_path(params[:account]) : transactions_path, class: "btn" %>
-    <%= f.submit transaction.new_record? ? t("form.create"): t("form.update") %>
+    <%= f.submit transaction.new_record? ? t("form.create"): t("form.update"), :class => "btn btn-primary" %>
   <% end %>
 </div>
