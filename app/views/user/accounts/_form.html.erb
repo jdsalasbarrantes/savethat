@@ -7,13 +7,15 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <label>
-          <%= t("user.account.model.current_balance") %>
-        </label>
-        <%= f.number_field :current_balance, class: "form-control", disabled: account.persisted? %>
-      </div>
+      <% if account.new_record? %>
+          <div class="form-group">
+            <label>
+              <%= t("user.account.model.current_balance") %>
+            </label>
+            <%= f.number_field :current_balance, class: "form-control" %>
+          </div>
+      <% end %>
       <%= link_to t("form.cancel"), accounts_path, class: "btn" %>
-      <%= f.submit account.persisted? ? t('form.update') : t('form.create'), :class => "btn btn-primary" %>
+      <%= f.submit account.persisted? ? t('form.update') : t('form.create'), :class => "btn btn-default" %>
   <% end %>
 </div>

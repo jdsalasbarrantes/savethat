@@ -34,6 +34,10 @@ class Transaction < ApplicationRecord
     order(date: :desc)
   end
 
+  def self.this_month
+    where(:date => Date.current.beginning_of_month..Date.current.end_of_month)
+  end
+
   private
 
   def update_account_balance(transaction_type, amount, reduce = false)

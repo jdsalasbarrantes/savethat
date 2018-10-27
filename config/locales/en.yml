@@ -31,12 +31,17 @@
 
 en:
   user:
+    layout:
+      accounts: "Accounts"
+      transactions: "Transactions"
     account:
       initial_transaction_name: "Initial Balance"
       model:
         name: "Name"
         current_balance: "Current Balance"
         code: "Code"
+        this_month_incomes: "This Month Incomes"
+        this_month_expenses: "This Month Expenses"
       index:
         title: "Accounts"
         empty: "You don't have accounts, please create one"

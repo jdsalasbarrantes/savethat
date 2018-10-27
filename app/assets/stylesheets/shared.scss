@@ -16,17 +16,22 @@
 
 .alert-success {
   background-color: $success-alert-bg-color;
+  border-color: $success-alert-border-color;
 }
 
 .error-list {
   margin-bottom: 0;
 }
 
-.button, .btn-primary {
+.inline {
+  display: inline-block;
+}
+
+.button, .btn-default {
   color: $btn-default-text-color;
   background-color: $btn-default-bg-color;
   border-color: $btn-default-border-color;
-  &:hover {
+  &:hover, &:active {
     border-color: $btn-default-border-color;
     background-color: $btn-default-bg-color;
   }

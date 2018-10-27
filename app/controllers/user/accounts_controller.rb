@@ -65,6 +65,11 @@ class User::AccountsController < User::BaseController
 
   def show
     @transactions = @account.transactions.order_by_date
+    @top_boxes = [
+        [I18n.t("user.account.model.current_balance"), @account.current_balance],
+        [I18n.t("user.account.model.this_month_incomes"), @account.transactions.this_month.where(transaction_type: Transaction::INCOME).sum(:amount)],
+        [I18n.t("user.account.model.this_month_expenses"), @account.transactions.this_month.where(transaction_type: Transaction::OUTCOME).sum(:amount)],
+    ]
   end
 
   def destroy

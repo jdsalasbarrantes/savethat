@@ -1,19 +1,19 @@
 <% provide(:title, t("user.account.index.title")) %>
 
-<h1 class="title">
+<h1 class="title section">
   <%= t("user.account.index.title") %>
 </h1>
 
-<div class="button-list">
+<div class="button-list section">
   <div class="add-button button-element">
-    <%= button_to t("user.account.index.add_new_account"), new_account_path, :method => :get, :class => "btn btn-primary" %>
+    <%= button_to t("user.account.index.add_new_account"), new_account_path, :method => :get, :class => "btn btn-default" %>
   </div>
   <div class="add-button button-element">
-    <%= button_to t("user.account.index.add_existing_account"), new_existing_accounts_path, :method => :get, :class => "btn btn-primary" %>
+    <%= button_to t("user.account.index.add_existing_account"), new_existing_accounts_path, :method => :get, :class => "btn btn-default" %>
   </div>
 </div>
 
-<div>
+<div class="section">
   <% if @accounts.empty? %>
     <%= t "user.account.index.empty" %>
   <% else %>
@@ -49,7 +49,7 @@
           </td>
           <td>
             <div class="action-button">
-              <%= button_to edit_account_path(account), :method => :get, :class => "btn btn-sm btn-primary" do %>
+              <%= button_to edit_account_path(account), :method => :get, :class => "btn btn-sm btn-default" do %>
                   <i class="fa fa-fw fa-pencil"></i>
               <% end %>
             </div>

@@ -1,4 +1,4 @@
-<h1 class="title">
+<h1 class="title section">
   <%= t("user.transaction.index.title") %>
 </h1>
 
@@ -7,16 +7,16 @@
       <%= t "user.transaction.index.empty_accounts" %>
   <% elsif transactions.empty? %>
     <%= t "user.transaction.index.empty" %>
-      <%= link_to t("term.here"), new_transaction_path %>
+      <%= link_to t("term.here"), new_transaction_path(:account => local_assigns[:account].present? ? account.id : nil) %>
   <% else %>
-    <div class="add-button">
+    <div class="add-button section">
       <% if local_assigns[:account].present? %>
-          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, params: {account: account.id}, :class => "btn btn-primary" %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, params: {account: account.id}, :class => "btn btn-default" %>
       <% else %>
-          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, :class => "btn btn-primary" %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, :class => "btn btn-default" %>
       <% end %>
     </div>
-    <table class="table">
+    <table class="table section">
       <thead>
       <tr>
         <th>
@@ -63,7 +63,7 @@
           </td>
           <td>
             <div class="action-button">
-              <%= button_to edit_transaction_path(transaction), :method => :get, :class => "btn btn-sm btn-primary" do %>
+              <%= button_to edit_transaction_path(transaction), :method => :get, :class => "btn btn-sm btn-default" do %>
                 <i class="fa fa-fw fa-pencil"></i>
               <% end %>
             </div>

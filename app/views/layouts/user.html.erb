@@ -36,22 +36,26 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" href="/dashboard">
-          <i class="fa fa-fw fa-calculator"></i>
-          <span class="nav-link-text">Dashboard</span>
+      <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">-->
+        <!--<a class="nav-link" href="/dashboard">-->
+          <!--<i class="fa fa-fw fa-calculator"></i>-->
+          <!--<span class="nav-link-text">Dashboard</span>-->
+        <!--</a>-->
+      <!--</li>-->
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <a class="nav-link" href="/accounts">
+          <i class="fa fa-fw fa-bank"></i>
+          <span class="nav-link-text">
+            <%= t('user.layout.accounts') %>
+          </span>
         </a>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
         <a class="nav-link" href="/transactions">
           <i class="fa fa-fw fa-table"></i>
-          <span class="nav-link-text">Transactions</span>
-        </a>
-      </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-        <a class="nav-link" href="/accounts">
-          <i class="fa fa-fw fa-bank"></i>
-          <span class="nav-link-text">Accounts</span>
+          <span class="nav-link-text">
+            <%= t('user.layout.transactions') %>
+          </span>
         </a>
       </li>
 <!--      Keep this in case you want to know how to create a accordion in the sidebar-->
