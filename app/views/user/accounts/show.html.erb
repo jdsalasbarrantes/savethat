@@ -26,5 +26,6 @@
 <%= render "user/transactions/list", transactions: @transactions, account: @account %>
 
 <p class="section">
-  <%= t('user.account.show.share', code: @account.code) %>
+  <i class="fa fa-fw fa-users"></i>
+  <%= t('user.account.show.share', code: @account.code).html_safe %>
 </p>

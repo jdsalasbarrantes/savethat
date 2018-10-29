@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get "dashboard" => "user/dashboard#index"
-
   resources :accounts, controller: "user/accounts" do
     collection do
       get "new_existing"

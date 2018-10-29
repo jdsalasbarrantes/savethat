@@ -63,7 +63,7 @@ en:
       show:
         title: "Account: %{name}"
         edit: "Edit Account"
-        share: "To share this account use the following code: %{code}"
+        share: "To share this account use the following code: <b>%{code}</b>"
       destroy:
         destroyed: "Account has been deleted successfully"
         confirmation: "Are you sure?"

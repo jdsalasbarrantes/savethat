@@ -43,7 +43,7 @@
       <%= f.text_field :date, class: "datepicker" %>
     </div>
 
-    <%= link_to t("form.cancel"), params[:account] ? account_path(params[:account]) : transactions_path, class: "btn" %>
+    <%= link_to t("form.cancel"), :back, class: "btn" %>
     <%= f.submit transaction.new_record? ? t("form.create"): t("form.update"), :class => "btn btn-default" %>
   <% end %>
 </div>
