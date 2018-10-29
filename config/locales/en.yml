@@ -34,6 +34,7 @@ en:
     layout:
       accounts: "Accounts"
       transactions: "Transactions"
+      logout: "Logout"
     account:
       initial_transaction_name: "Initial Balance"
       model:
