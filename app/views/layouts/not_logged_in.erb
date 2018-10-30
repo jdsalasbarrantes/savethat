@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'shared', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'not_logged_in', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'shared', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if notice %>
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col column-1">
+          <a class="logo" href="/">
+            savethat.money
+          </a>
+        </div>
+        <div class="col column-2">
+          <%= yield %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

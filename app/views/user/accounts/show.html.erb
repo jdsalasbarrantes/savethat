@@ -1,0 +1,31 @@
+<% provide(:title, t("user.account.show.title", :name => @account.name)) %>
+
+<div class="account-header section">
+  <h1 class="title">
+    <%= t("user.account.show.title", :name => @account.name) %>
+  </h1>
+    <%= button_to edit_account_path(@account), :method => :get, :class => "btn btn-default" do %>
+      <i class="fa fa-fw fa-pencil-alt"></i>
+    <% end %>
+</div>
+
+<div class="top-boxes section">
+  <% @top_boxes.each do |title, value| %>
+      <div class="top-box">
+        <div class="title">
+          <%= title %>
+        </div>
+        <div class="value">
+          <%= value %>
+        </div>
+      </div>
+
+  <% end %>
+</div>
+
+<%= render "user/transactions/list", transactions: @transactions, account: @account %>
+
+<p class="section">
+  <i class="fa fa-fw fa-users"></i>
+  <%= t('user.account.show.share', code: @account.code).html_safe %>
+</p>

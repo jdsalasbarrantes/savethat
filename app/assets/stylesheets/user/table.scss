@@ -1,0 +1,11 @@
+.table {
+  .action-button {
+    display: inline-block;
+  }
+
+  tbody{
+    tr:nth-child(2n + 1) {
+      background: $table-child-bg-color;
+    }
+  }
+}

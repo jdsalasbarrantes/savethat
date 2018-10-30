@@ -1,0 +1,67 @@
+<% provide(:title, t("user.account.index.title")) %>
+
+<h1 class="title section">
+  <%= t("user.account.index.title") %>
+</h1>
+
+<div class="button-list section">
+  <div class="add-button button-element">
+    <%= button_to t("user.account.index.add_new_account"), new_account_path, :method => :get, :class => "btn btn-default" %>
+  </div>
+  <div class="add-button button-element">
+    <%= button_to t("user.account.index.add_existing_account"), new_existing_accounts_path, :method => :get, :class => "btn btn-default" %>
+  </div>
+</div>
+
+<div class="section">
+  <% if @accounts.empty? %>
+    <%= t "user.account.index.empty" %>
+  <% else %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          <%= t("user.account.model.name") %>
+        </th>
+        <th>
+          <%= t("user.account.index.table.money") %>
+        </th>
+        <th>
+          <%= t("table.actions") %>
+        </th>
+      </tr>
+      </tr>
+      </thead>
+      <tbody>
+      <% @accounts.each_with_index do |account, index| %>
+        <tr>
+          <td>
+            <%= index + 1 %>
+          </td>
+          <td>
+            <%= link_to account.name, account_path(account) %>
+          </td>
+          <td>
+            <%= account.current_balance %>
+          </td>
+          <td>
+            <div class="action-button">
+              <%= button_to edit_account_path(account), :method => :get, :class => "btn btn-sm btn-default" do %>
+                  <i class="fa fa-fw fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <div class="action-button">
+              <%= button_to account, :method => :delete, data: { confirm: t("user.account.destroy.confirmation") }, :class => "btn btn-sm btn-danger" do %>
+                <i class="fa fa-fw fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

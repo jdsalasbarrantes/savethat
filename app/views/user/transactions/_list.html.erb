@@ -1,0 +1,81 @@
+<h1 class="title section">
+  <%= t("user.transaction.index.title") %>
+</h1>
+
+<div>
+  <% if current_user.accounts.empty? %>
+      <%= t "user.transaction.index.empty_accounts" %>
+  <% elsif transactions.empty? %>
+    <%= t "user.transaction.index.empty" %>
+      <%= link_to t("term.here"), new_transaction_path(:account => local_assigns[:account].present? ? account.id : nil) %>
+  <% else %>
+    <div class="add-button section">
+      <% if local_assigns[:account].present? %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, params: {account: account.id}, :class => "btn btn-default" %>
+      <% else %>
+          <%= button_to t("user.transaction.index.add_transaction"), new_transaction_path, :method => :get, :class => "btn btn-default" %>
+      <% end %>
+    </div>
+    <table class="table section">
+      <thead>
+      <tr>
+        <th>
+          <%= t("user.transaction.model.date") %>
+        </th>
+        <% if local_assigns[:account].nil? %>
+          <th>
+            <%= t("user.transaction.model.account") %>
+          </th>
+        <% end %>
+        <th>
+          <%= t("user.transaction.model.type") %>
+        </th>
+        <th>
+          <%= t("user.transaction.model.name") %>
+        </th>
+        <th>
+          <%= t("user.transaction.model.amount") %>
+        </th>
+        <th>
+          <%= t("table.actions") %>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% transactions.each do |transaction| %>
+        <tr>
+          <td>
+            <%= transaction.date %>
+          </td>
+          <% if local_assigns[:account].nil? %>
+            <td>
+              <%= link_to transaction.account.name, account_path(transaction.account) %>
+            </td>
+          <% end %>
+          <td>
+            <%= t("user.transaction.types.income.#{transaction.transaction_type}") %>
+          </td>
+          <td>
+            <%= transaction.name %>
+          </td>
+          <td>
+            <%= transaction.amount %>
+          </td>
+          <td>
+            <div class="action-button">
+              <%= button_to edit_transaction_path(transaction), :method => :get, :class => "btn btn-sm btn-default" do %>
+                  <i class="fa fa-fw fa-pencil-alt"></i>
+              <% end %>
+            </div>
+            <div class="action-button">
+              <%= button_to transaction, :method => :delete, data: { confirm: t("user.transaction.destroy.confirmation") }, :class => "btn btn-sm btn-danger" do %>
+                <i class="fa fa-fw fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

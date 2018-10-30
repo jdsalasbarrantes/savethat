@@ -30,4 +30,81 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user:
+    layout:
+      accounts: "Accounts"
+      transactions: "Transactions"
+      logout: "Logout"
+    account:
+      initial_transaction_name: "Initial Balance"
+      model:
+        name: "Name"
+        current_balance: "Current Balance"
+        code: "Code"
+        this_month_incomes: "This Month Incomes"
+        this_month_expenses: "This Month Expenses"
+      index:
+        title: "Accounts"
+        empty: "You don't have accounts, please create one"
+        add_new_account: "Add New Account"
+        add_existing_account: "Add Existing Account"
+        table:
+          money: "Current Balance"
+      new:
+        title: "New Account"
+        created: "Account created successfully"
+        error: "Something went wrong creating the account, please try again"
+      new_existing:
+        error: "The code doesn't belongs to an account, please try again"
+        already_added: "This code was already added to you, the account name is %{account}"
+      edit:
+        title: "Edit Account: %{name}"
+        updated: "Account updated successfully"
+        error: "Something went wrong updating the account, please try again"
+      show:
+        title: "Account: %{name}"
+        edit: "Edit Account"
+        share: "To share this account use the following code: <b>%{code}</b>"
+      destroy:
+        destroyed: "Account has been deleted successfully"
+        confirmation: "Are you sure?"
+    transaction:
+      types:
+        income: "Income"
+        outcome: "Outcome"
+      model:
+        type: "Type"
+        date: "Date"
+        name: "Name"
+        amount: "Amount"
+        account: "Account"
+        description: "Description"
+        date: "Date"
+      index:
+        title: "Transactions"
+        empty: "You don't have transactions. To create one click"
+        empty_accounts: "You don't have an account, please create one in order to create transactions"
+        add_transaction: "Add Transaction"
+      new:
+        title: "New Transaction"
+        created: "Transaction created successfully"
+        error: "Something went wrong creating the transaction, please try again"
+      edit:
+        title: "Update Transaction"
+        created: "Transaction updated successfully"
+        error: "Something went wrong updating the transaction, please try again"
+      destroy:
+        destroyed: "Transaction has been deleted successfully"
+        confirmation: "Are you sure?"
+  form:
+    add: "Add"
+    create: "Create"
+    update: "Update"
+    delete: "Delete"
+    cancel: "Cancel"
+
+  table:
+    actions: "Actions"
+
+  term:
+    here: "here"

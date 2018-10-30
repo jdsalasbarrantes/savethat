@@ -1,0 +1,7 @@
+<% provide(:title, t("user.account.edit.title", name: @account.name)) %>
+
+<h1>
+  <%= t("user.account.edit.title", name: @account.name) %>
+</h1>
+
+<%= render "form", account: @account %>

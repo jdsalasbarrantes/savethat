@@ -1,0 +1,32 @@
+@import "variables";
+
+body {
+  background-color: $not-logged-in-bg-color;
+  color: $not-logged-in-text-color;
+}
+
+.form-control {
+  &:focus {
+    border: 3px solid $btn-default-bg-color;
+  }
+}
+
+.container {
+  padding-top: 180px;
+}
+
+.logo {
+  font-size: 60px;
+  position: relative;
+  top: 35%;
+
+}
+
+.column-1 {
+  margin-bottom: 30px;
+}
+
+
+.button {
+  margin-bottom: 10px;
+}

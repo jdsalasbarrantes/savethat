@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.4.2/css/all.css', media: 'all', integrity: 'sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns', crossorigin: 'anonymous' %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto', media: 'all' %>
+  <%= stylesheet_link_tag 'shared', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'user/user', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'shared', 'data-turbolinks-track': 'reload' %>
+
+  <% if @js_libs.present? %>
+    <% @js_libs.each do |lib| %>
+      <%= javascript_include_tag "user/#{lib}", 'data-turbolinks-track': 'reload' %>
+    <%end %>
+  <% end %>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<% if notice %>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="alert alert-danger">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= alert.html_safe %>
+  </div>
+<% end %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <a class="navbar-brand logo" href="/">
+    savethat.money
+    <i class="fas fa-coins"></i>
+  </a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">-->
+        <!--<a class="nav-link" href="/dashboard">-->
+          <!--<i class="fa fa-fw fa-calculator"></i>-->
+          <!--<span class="nav-link-text">Dashboard</span>-->
+        <!--</a>-->
+      <!--</li>-->
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <a class="nav-link" href="/accounts">
+          <i class="fa fa-fw fa-wallet"></i>
+          <span class="nav-link-text">
+            <%= t('user.layout.accounts') %>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+        <a class="nav-link" href="/transactions">
+          <i class="fa fa-fw fa-table"></i>
+          <span class="nav-link-text">
+            <%= t('user.layout.transactions') %>
+          </span>
+        </a>
+      </li>
+<!--      Keep this in case you want to know how to create a accordion in the sidebar-->
+<!--      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">-->
+<!--        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">-->
+<!--          <i class="fa fa-fw fa-bank"></i>-->
+<!--          <span class="nav-link-text">Accounts</span>-->
+<!--        </a>-->
+<!--        <ul class="sidenav-second-level collapse" id="collapseComponents">-->
+<!--          <li>-->
+<!--            <a href="#">Item 1</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">Item 2</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </li>-->
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">
+          <%= t('user.layout.logout') %>
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="content-wrapper">
+  <%= yield %>
+</div>
+<footer class="sticky-footer">
+  <div class="container">
+    <div class="text-center">
+      <small>Copyright © Save That Money 2018</small>
+    </div>
+  </div>
+</footer>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fa fa-angle-up"></i>
+</a>
+</body>
+</html>

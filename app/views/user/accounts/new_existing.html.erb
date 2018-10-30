@@ -1,0 +1,12 @@
+<div class="form small-form">
+  <%= form_tag create_existing_accounts_path do %>
+      <div class="form-group">
+        <label>
+          <%= t("user.account.model.code") %>
+        </label>
+        <%= text_field_tag :code, nil, class: "form-control" %>
+      </div>
+      <%= link_to t("form.cancel"), :back, class: "btn" %>
+      <%= submit_tag t('form.add'), :class => "btn btn-default" %>
+  <% end %>
+</div>
