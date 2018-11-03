@@ -83,7 +83,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: <%= ENV['SAVETHAT_DATABASE_NAME'] %>
+  username: <%= ENV['SAVETHAT_DATABASE_USERNAME'] %>
+  host: <%= ENV['SAVETHAT_DATABASE_HOST'] %>
+  password: <%= ENV['SAVETHAT_DATABASE_PASSWORD'] %>
