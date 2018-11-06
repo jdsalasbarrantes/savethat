@@ -93,15 +93,16 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mail config
+  config.action_mailer.default_url_options = {:host => ENV['HOST']}
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => ENV['mail_username'],
-      :password => ENV['mail_password'],
-      :address => ENV['mail_address'],
-      :domain => ENV['mail_domain'],
-      :port => ENV['mail_port'],
-      :authentication => :ENV['mail_authentication'],
+      :user_name => ENV['MAIL_USERNAME'],
+      :password => ENV['MAIL_PASSWORD'],
+      :address => ENV['MAIL_ADDRESS'],
+      :domain => ENV['MAIL_DOMAIN'],
+      :port => ENV['MAIL_PORT'],
+      :authentication => :ENV['MAIL_AUTHENTICATION'],
       :enable_starttls_auto => true
   }
 end

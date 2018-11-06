@@ -84,7 +84,8 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['SAVETHAT_DATABASE_NAME'] %>
-  username: <%= ENV['SAVETHAT_DATABASE_USERNAME'] %>
-  host: <%= ENV['SAVETHAT_DATABASE_HOST'] %>
-  password: <%= ENV['SAVETHAT_DATABASE_PASSWORD'] %>
+  encoding: utf8
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
