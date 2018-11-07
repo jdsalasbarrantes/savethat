@@ -1,11 +1,11 @@
 set :stage, :production
 set :rails_env, :production
-set :branch, "master"
+set :branch, "<BRANCH NAME>"
 
-server "<SERVER HOST>", user: "<SERVER USER>", roles: %w{app db web}
+server "<SERVER HOST>", user: "<DEPLOY USER>", roles: %w{app db web}
 
 set :ssh_options, {
-    keys: %w(PATH TO KEY),
+    keys: %w(<KEYS PATH>),
     forward_agent: true,
     auth_methods: %w(publickey password)
 }
