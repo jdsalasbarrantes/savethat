@@ -2,7 +2,7 @@
   <%= t("user.transaction.index.title") %>
 </h1>
 
-<div>
+<div class="section">
   <% if current_user.accounts.empty? %>
       <%= t "user.transaction.index.empty_accounts" %>
   <% elsif transactions.empty? %>
@@ -77,5 +77,6 @@
       <% end %>
       </tbody>
     </table>
+    <%= paginate transactions %>
   <% end %>
 </div>

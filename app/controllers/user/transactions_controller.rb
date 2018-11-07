@@ -9,7 +9,7 @@ class User::TransactionsController < User::BaseController
   end
 
   def index
-    @transactions = current_user.transactions.order_by_date
+    @transactions = current_user.transactions.order_by_date.page(params[:page])
   end
 
   def show

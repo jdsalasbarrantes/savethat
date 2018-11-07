@@ -5,6 +5,8 @@ class Transaction < ApplicationRecord
   validates :date, :presence => true
   belongs_to :account
 
+  paginates_per 15
+
   OUTCOME = "outcome"
   INCOME = "income"
   TYPES = [OUTCOME, INCOME]
