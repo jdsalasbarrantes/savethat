@@ -60,7 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Used to set the links on the email
-  config.action_mailer.default_url_options = {:host => ENV['HOST'], :port => ENV['PORT']}
+  config.action_mailer.default_url_options = {:host => ENV['APP_HOST'], :port => ENV['APP_PORT']}
 
   # Mail config
   config.action_mailer.delivery_method = :smtp

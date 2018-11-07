@@ -19,7 +19,8 @@ class   Account < ApplicationRecord
           name: I18n.t("user.account.initial_transaction_name"),
           description: "",
           amount: current_balance,
-          account_id: id
+          account_id: id,
+          date: Date.current
       )
       # Remove current balance, so it can be added as part of the initial transaction
       self.current_balance = 0

@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, "savethat"
-set :repo_url, "git@github.com:jdsalasbarrantes/savethat.git"
+set :repo_url, "https://github.com/jdsalasbarrantes/savethat.git"
 set :rvm_ruby_version, "2.5.1"
 
 set :linked_files, %w{config/master.key}
