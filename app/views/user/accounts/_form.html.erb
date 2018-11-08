@@ -10,6 +10,12 @@
       <% if account.new_record? %>
           <div class="form-group">
             <label>
+              <%= t("user.account.model.currency") %>
+            </label>
+            <%= f.select :currency, ["USD", "CRC"], {}, {:class => "form-control"} %>
+          </div>
+          <div class="form-group">
+            <label>
               <%= t("user.account.model.current_balance") %>
             </label>
             <%= f.number_field :current_balance, class: "form-control" %>

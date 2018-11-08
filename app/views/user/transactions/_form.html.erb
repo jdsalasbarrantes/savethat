@@ -33,7 +33,8 @@
         <%= t("user.transaction.model.account") %>
       </label>
       <% default_value = params[:account] ? params[:account] : nil %>
-      <%= f.select :account_id, options_for_select(current_user.accounts.pluck(:name, :id), default_value), {}, {:class => "form-control"} %>
+      <% values = current_user.accounts.pluck(:name, :currency, :id).map{|name, currency, id| ["#{name} (#{currency})", id]}%>
+      <%= f.select :account_id, options_for_select(values, default_value), {}, {:class => "form-control"} %>
     </div>
 
     <div class="form-group">

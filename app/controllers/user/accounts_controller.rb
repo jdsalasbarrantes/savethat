@@ -66,9 +66,9 @@ class User::AccountsController < User::BaseController
   def show
     @transactions = @account.transactions.order_by_date.page(params[:page])
     @top_boxes = [
-        [I18n.t("user.account.model.current_balance"), @account.current_balance],
-        [I18n.t("user.account.model.this_month_incomes"), @account.transactions.this_month.where(transaction_type: Transaction::INCOME).sum(:amount)],
-        [I18n.t("user.account.model.this_month_expenses"), @account.transactions.this_month.where(transaction_type: Transaction::OUTCOME).sum(:amount)],
+        [I18n.t("user.account.model.current_balance"), display_money_value(@account.current_balance, @account)],
+        [I18n.t("user.account.model.this_month_incomes"), display_money_value(@account.transactions.this_month.where(transaction_type: Transaction::INCOME).sum(:amount), @account)],
+        [I18n.t("user.account.model.this_month_expenses"), display_money_value(@account.transactions.this_month.where(transaction_type: Transaction::OUTCOME).sum(:amount), @account)],
     ]
   end
 
@@ -81,7 +81,7 @@ class User::AccountsController < User::BaseController
   private
 
   def account_params_on_create
-    params.require(:account).permit(:name, :current_balance)
+    params.require(:account).permit(:name, :currency, :current_balance)
   end
 
   def account_params_on_update

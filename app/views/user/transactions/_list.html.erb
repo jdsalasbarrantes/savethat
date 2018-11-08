@@ -59,7 +59,7 @@
             <%= transaction.name %>
           </td>
           <td>
-            <%= transaction.amount %>
+            <%= display_money_value(transaction.amount, transaction.account) %>
           </td>
           <td>
             <div class="action-button">
