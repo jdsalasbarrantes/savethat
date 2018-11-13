@@ -1,6 +1,7 @@
 class   Account < ApplicationRecord
   validates :name, :presence => true
   validates :current_balance, :presence => true
+  validates :currency, :presence => true
   has_many :transactions
   has_and_belongs_to_many :users
   ACCOUNT_CODE_LENGTH = 8

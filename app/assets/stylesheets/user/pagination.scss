@@ -1,0 +1,14 @@
+nav.pagination {
+  @include flexbox();
+  @include justify-content(center);
+  span {
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: $btn-default-text-color;
+    border-color: $btn-default-border-color;
+    border-radius: $btn-default-border-radius;
+    background-color: $btn-default-bg-color;
+    min-width: 40px;
+    text-align: center;
+  }
+}

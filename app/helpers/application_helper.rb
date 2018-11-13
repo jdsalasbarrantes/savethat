@@ -17,4 +17,9 @@ module ApplicationHelper
     html += "</ul>"
     html
   end
+
+  def display_money_value(value, account)
+    "#{value} #{account.currency}"
+  end
+
 end

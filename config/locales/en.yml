@@ -39,6 +39,7 @@ en:
       initial_transaction_name: "Initial Balance"
       model:
         name: "Name"
+        currency: "Currency"
         current_balance: "Current Balance"
         code: "Code"
         this_month_incomes: "This Month Incomes"

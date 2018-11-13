@@ -45,7 +45,7 @@
             <%= link_to account.name, account_path(account) %>
           </td>
           <td>
-            <%= account.current_balance %>
+            <%= display_money_value(account.current_balance, account) %>
           </td>
           <td>
             <div class="action-button">
