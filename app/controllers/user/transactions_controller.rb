@@ -21,7 +21,7 @@ class User::TransactionsController < User::BaseController
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    @transaction = Transaction.new(transaction_params_on_create)
     if @transaction.save
       flash[:notice] = I18n.t("user.transaction.new.created")
       redirect_to account_path(@transaction.account)
@@ -35,7 +35,7 @@ class User::TransactionsController < User::BaseController
   end
 
   def update
-    if @transaction.update(transaction_params)
+    if @transaction.update(transaction_params_on_update)
       flash[:notice] = I18n.t("user.transaction.edit.created")
       redirect_to account_path(@transaction.account)
     else
@@ -52,8 +52,13 @@ class User::TransactionsController < User::BaseController
 
   private
 
-  def transaction_params
+  def transaction_params_on_create
     params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :account_id, :date)
   end
+
+  def transaction_params_on_update
+    params.require(:transaction).permit(:transaction_type, :name, :description, :amount, :date)
+  end
+
 end
 

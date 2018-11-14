@@ -6,7 +6,7 @@
         </label>
         <%= text_field_tag :code, nil, class: "form-control" %>
       </div>
-      <%= link_to t("form.cancel"), :back, class: "btn" %>
+      <%= link_to t("form.cancel"), accounts_path, class: "btn" %>
       <%= submit_tag t('form.add'), :class => "btn btn-default" %>
   <% end %>
 </div>

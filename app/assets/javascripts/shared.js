@@ -18,3 +18,4 @@
 //= require activestorage
 //= require turbolinks
 //= require ./init_components
+//= require ./alert
