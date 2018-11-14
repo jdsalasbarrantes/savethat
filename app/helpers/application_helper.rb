@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def display_money_value(value, account)
-    "#{value} #{account.currency}"
+    "#{ActiveSupport::NumberHelper.number_to_delimited(value.floor)} #{account.currency}"
   end
 
 end
