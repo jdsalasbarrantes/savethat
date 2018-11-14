@@ -1,5 +1,7 @@
 # README
 
+Personal Finances app
+
 ## Technology Stack
 
 - Ruby 2.5.1
