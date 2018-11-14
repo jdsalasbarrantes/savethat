@@ -32,7 +32,6 @@
       <label>
         <%= t("user.transaction.model.account") %>
       </label>
-
       <% default_value = transaction.account.present? ? transaction.account.id : params[:account] %>
       <% values = current_user.accounts.pluck(:name, :currency, :id).map{|name, currency, id| ["#{name} (#{currency})", id]}%>
       <%= f.select :account_id, options_for_select(values, default_value), {include_blank: true}, {:class => "form-control", :include_blank => true, :disabled => transaction.persisted?} %>
